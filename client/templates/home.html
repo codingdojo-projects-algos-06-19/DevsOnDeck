@@ -1,0 +1,17 @@
+{% extends './layout.html' %}
+{% block title %}tweets dashboard{% endblock %}
+{% block body %}
+
+<div class="dev-box">
+    <h1>DEVELOPER</h1>
+    <a class="btn-1" href="{{ url_for('developer:register') }}">Register</a>
+    <a class="btn-1" href="{{ url_for('developer:login_page') }}">login</a>
+</div>
+
+<div class="org-box">
+    <h1>ORGANIZATION</h1>
+    <a class="btn-1" href="{{ url_for('organization:register') }}">Register</a>
+    <a class="btn-1" href="{{ url_for('organization:login_page') }}">login</a>
+</div>
+
+{% endblock %}
