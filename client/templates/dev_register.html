@@ -9,11 +9,9 @@
   <link rel="stylesheet" type="text/css" 
    href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/users_new.css') }}">
-  <title>Login or Register</title>
+  <title>get.you</title>
 </head>
 <body>
-  <div class="container">
-    <h1>Login Or Register</h1>
     {% with messages = get_flashed_messages() %}
       {% if messages %}
         <ul class="flashes">
@@ -23,26 +21,23 @@
         </ul>
       {% endif %}
     {% endwith %}
-    <div class="forms-wrapper">
-      <div class="form-container">
-        <h2>Register</h2>
+      <div class="form-content">
+        <h2>Developer Register</h2>
         <form action="{{ url_for('developer:create') }}" method="post">
           <label for="first_name">First Name:</label>
-          <input type="text" name="first_name" placeholder="Vanilla">
+          <input type="text" name="first_name" placeholder="Heejin">
           <label for="last_name">Last Name:</label>
-          <input type="text" name="last_name" placeholder="Ice">
+          <input type="text" name="last_name" placeholder="Han">
           <label for="email">Email:</label>
-          <input type="text" name="email" placeholder="vanillaice@yahoo.com">
+          <input type="text" name="email" placeholder="heeani20@gmail.com">
           <label for="username">Username:</label>
-          <input type="text" name="username" placeholder="iceicebaby99">
+          <input type="text" name="username" placeholder="heeani">
           <label for="password">Password:</label>
-          <input type="password" name="password" placeholder="word2urMother">
+          <input type="password" name="password" placeholder="password">
           <label for="pw_confirm">Confirm Password</label>
-          <input type="password" name="confirm_password" value="">
+          <input type="password" name="confirm_password" value="" placeholder="password">
           <input type="submit" value="Register">
         </form>
       </div>
-    </div>
-  </div>
 </body>
 </html>
