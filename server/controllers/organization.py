@@ -1,6 +1,6 @@
 from flask import render_template, request, redirect, session, url_for, flash
 from server.models.organization import Organization
-
+from server.models.position import Position
 
 # Organization
 def org_register_page():
@@ -30,3 +30,13 @@ def org_login():
 def org_logout():
     session.clear()
     return redirect(url_for("home"))
+
+#org position
+
+def org_add_position():
+    errors = Position.position_validation(request.form)
+    if errors:
+        for error in errors:
+            flash(error)
+    Position.add_position(request.form, session['organization_id'])
+    return redirect(url_for("dashboard"))

@@ -1,13 +1,32 @@
 {% extends './layout.html' %}
-{% block title %}tweets dashboard{% endblock %}
+{% block title %}get.you{% endblock %}
 {% block body %}
 
 <body>
     <h1>DAHSBOARD</h1>
+    <div class="button1">
+        <br><a class="btn-1" href="{{ url_for('organization:dashboard') }}">Add Position</a>
+        <br><a class="btn-1" href="{{ url_for('developer:dashboard') }}">Add Skills</a>
+    </div>
+    <div class="position_container">
+    <h3>POSITIONS</h3>
+        <div class="position_box">
+        {% for position in positions %}
+            <h1><a href="#">{{ position.name }}</a></h1>
+        {% endfor %}
+        </div>
+    </div>
 
-    <br><a class="btn-1" href="{{ url_for('organization:dashboard') }}">Add Position</a>
-    <br><a class="btn-1" href="{{ url_for('developer:dashboard') }}">Add Skills</a>
-
+    <div class="skill_container">
+        <h3>DEVELOPERS</h3>
+        <div class="skill_box">
+        {% for skill in skills %}
+        <h1>{{ skill.developer.username }}</h1>
+            <h3>{{ skill.languages }}</h3>
+            <h3>{{ skill.bio }}</h3>
+        {% endfor %}
+        </div>
+    </div>
 </body>
 </html>
 

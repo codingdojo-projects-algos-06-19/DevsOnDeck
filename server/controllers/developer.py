@@ -1,5 +1,6 @@
 from flask import render_template, request, redirect, session, url_for, flash
 from server.models.developer import Developer
+from server.models.skill import Skill
 
 
 # Developer
@@ -30,3 +31,12 @@ def dev_login():
 def dev_logout():
     session.clear()
     return redirect(url_for("home"))
+
+#developer skills
+def dev_add_skill():
+    errors = Skill.skill_validation(request.form)
+    if errors:
+        for error in errors:
+            flash(error)
+    Skill.add_skill(request.form, session['developer_id'])
+    return redirect(url_for("dashboard"))
