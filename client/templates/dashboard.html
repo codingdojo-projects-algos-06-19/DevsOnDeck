@@ -2,12 +2,24 @@
 {% block title %}get.you{% endblock %}
 {% block body %}
 
+<a href="{{ url_for('logout') }}">logout</a>
 <body>
-    <h1>DAHSBOARD</h1>
+
+
+    {% for developer in developers %}
+      <h1>Hi {{ developers.username }}</h1> 
+    {% endfor %}
+
+    {% for organizations in organization %}
+    <h1>Hi {{ organizations.organization }}</h1> 
+    {% endfor %}
+    
     <div class="button1">
         <br><a class="btn-1" href="{{ url_for('organization:dashboard') }}">Add Position</a>
         <br><a class="btn-1" href="{{ url_for('developer:dashboard') }}">Add Skills</a>
     </div>
+
+
     <div class="position_container">
     <h3>POSITIONS</h3>
         <div class="position_box">

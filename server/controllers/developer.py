@@ -26,6 +26,8 @@ def dev_login():
         flash(response)
         return redirect(url_for("developer:login_page"))
     session['developer_id'] = response
+    print('random')
+    print(session['developer_id'])
     return redirect(url_for("dashboard"))
 
 def dev_logout():

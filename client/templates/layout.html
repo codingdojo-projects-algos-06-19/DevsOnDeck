@@ -31,6 +31,126 @@
     margin-left: 10px;
     }
     
+    .card_org {
+        position: absolute;
+        margin-left: 100px;
+        top: 50%;
+        left: 55%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        height: 400px;
+        transform-style: preserve-3d;
+        perspective: 600px;
+        transition: 0.5s;
+    }
+
+    .card_org .front {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #333333;
+        backface-visibility: hidden;
+        transform: rotateX(0deg);
+        transition: 0.5s;
+        color: white;
+        border-radius: 20px;
+    }
+    .card_org:hover .front {
+        transform: rotateX(-180deg);
+    }
+    .card_org .back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        backface-visibility: hidden;
+        transform: rotateX(180deg);
+        transition: 1s;
+        border-radius: 20px;
+    }
+    .card_org:hover .back {
+        transform: rotateX(0deg);
+    }
+    .card_org .back a {
+        border: solid 1px white;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        margin-top: 100px;
+        display: block;
+        
+
+    }
+    .card_dev {
+        position: absolute;
+        margin-right: 500px;
+        top: 50%;
+        left: 40%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        height: 400px;
+        transform-style: preserve-3d;
+        perspective: 600px;
+        transition: 0.5s;
+    }
+
+    .card_dev .front {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #333333;
+        backface-visibility: hidden;
+        transform: rotateX(0deg);
+        transition: 0.5s;
+        color: white;
+        border-radius: 20px;
+    }
+    .card_dev:hover .front {
+        transform: rotateX(-180deg);
+    }
+    .card_dev .back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        backface-visibility: hidden;
+        transform: rotateX(180deg);
+        transition: 1s;
+        border-radius: 20px;
+    }
+    .card_dev:hover .back {
+        transform: rotateX(0deg);
+    }
+    h2 {
+        font-size: 35px;
+        text-align: center;
+        margin-top: 50%;
+    }
+    .card_dev .back a {
+        border: solid 1px white;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        margin-top: 100px;
+        display: block;
+
+    }
+    .get_you a {
+        margin: 10px;
+        text-decoration: none;
+        color: #0b0b0b;        
+    }
+    h3 {
+        text-align: center;
+    }
 
     </style>
   {% block head %}{% endblock %}
@@ -38,8 +158,7 @@
 </head>
 <body>
     <div class="header">
-        <h1>get.you</h1>
-        <a href="{{ url_for('logout') }}">logout</a>
+        <h3 class=get_you><a href="{{ url_for('dashboard') }}">get.you</a></h3>
     </div>
         {% block body %}{% endblock %}
 </body>

@@ -9,6 +9,9 @@
     <form action="{{ url_for('developer:add_skill') }}" method="post">
         <input type="text" name="bio" placeholder="enter somethin" id="">
         <input type="text" name="languages" placeholder="enter lang" id="">
+        <input type="checkbox" name="python" placeholder="python" id="">
+        <input type="checkbox" name="html" placeholder="html" id="">
+
         <input type="submit" value="Next Step">
     </form>
     {% endblock %}

@@ -3,15 +3,29 @@
 {% block body %}
 
 <div class="dev-box">
-    <h1>DEVELOPER</h1>
-    <a class="btn-1" href="{{ url_for('developer:register') }}">Register</a>
-    <a class="btn-1" href="{{ url_for('developer:login_page') }}">login</a>
+    <div class="card_dev">
+        <div class="front">
+            <h2>DEVELOPER</h2>
+        </div>
+        <div class="back">
+            <a class="btn-1" href="{{ url_for('developer:register') }}">Register</a>
+            <a class="btn-1" href="{{ url_for('developer:login_page') }}">login</a>
+        </div>
+    </div>
 </div>
 
-<div class="org-box">
-    <h1>ORGANIZATION</h1>
-    <a class="btn-1" href="{{ url_for('organization:register') }}">Register</a>
-    <a class="btn-1" href="{{ url_for('organization:login_page') }}">login</a>
+
+
+<div class="dev-box">
+    <div class="card_org">
+        <div class="front">
+            <h2>ORGANIZATION</h2>
+        </div>
+        <div class="back">
+            <a class="btn-1" href="{{ url_for('organization:register') }}">Register</a>
+            <a class="btn-1" href="{{ url_for('organization:login_page') }}">login</a>
+        </div>
+    </div>
 </div>
 
 {% endblock %}

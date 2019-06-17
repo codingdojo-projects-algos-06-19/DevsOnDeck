@@ -4,10 +4,14 @@ from sqlalchemy.sql import func
 from config import db, bcrypt 
 
 
+
+
 class Skill(db.Model):
     __tablename__ = "skills"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     languages = db.Column(db.String(255))
+    python = db.Column(db.String(255), nullable="True")
+    html = db.Column(db.String(255), nullable="True")
     bio = db.Column(db.Text)
     developer_id = db.Column(db.Integer, db.ForeignKey("developer.id"))
     developer = db.relationship('Developer', foreign_keys=[developer_id], backref="developer_skills", cascade='all') 
@@ -28,6 +32,8 @@ class Skill(db.Model):
     def add_skill(cls, form, developer_id):
         skills = cls(
             languages=form['languages'],
+            python = form['python'],
+            html = form['html'],
             bio=form['bio'],
             developer_id = developer_id
         )
